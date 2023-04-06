@@ -23,9 +23,10 @@
 			<td><c:out value="${usuario.nombre}"></c:out></td>
 			<td><c:out value="${usuario.email}"></c:out></td>
 			<td><c:out value="${usuario.pais}"></c:out></td>
+			<td><a href="UsuarioController?id=<c:out value="${usuario.id}"/>">Editar</a></td>
 		</tr>
 		</c:forEach>
 	</table>
-	<a href="UsuarioController?id=<c:out value="${usuario.id}"/>">Editar</a>
+	
 </body>
 </html>
