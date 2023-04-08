@@ -8,7 +8,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>UsuarioController</servlet-name>
-    <url-pattern>/UsuarioController</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
   <display-name>testJPA</display-name>
   <welcome-file-list>
