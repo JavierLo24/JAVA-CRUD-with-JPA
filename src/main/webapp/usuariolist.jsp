@@ -32,7 +32,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 			<table class="table table-bordered">
 			<jsp:useBean id="uDao" class="services.UsuarioDao" scope="request">
 		</jsp:useBean>
-<<<<<<< HEAD
+
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -64,24 +64,6 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 			</table>
 		</div>
 	</div>
-=======
-		<tr>
-			<th>Id</th>
-			<th>Nombre</th>
-			<th>Email</th>
-			<th>Pais</th>
-		</tr>
-		<c:forEach var="usuario" items="${uDao.list()}">
-		<tr>
-			<td><c:out value="${usuario.id}"></c:out></td>
-			<td><c:out value="${usuario.nombre}"></c:out></td>
-			<td><c:out value="${usuario.email}"></c:out></td>
-			<td><c:out value="${usuario.pais}"></c:out></td>
-			<td><a href="UsuarioController?id=<c:out value="${usuario.id}"/>">Editar</a></td>
-		</tr>
-		</c:forEach>
-	</table>
-	
->>>>>>> 4e2ba18a3f1089f4afec4d1f27ee1b8bee596ac0
+
 </body>
 </html>

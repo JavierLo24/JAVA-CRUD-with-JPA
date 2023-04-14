@@ -32,23 +32,15 @@
 		<version>1.18.26</version>
 		<scope>provided</scope>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	
+<!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
 <dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>42.5.1</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
-<dependency>
-    <groupId>jakarta.servlet.jsp.jstl</groupId>
-    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <groupId>org.glassfish.web</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
     <version>2.0.0</version>
 </dependency>
-<dependency>
-		<groupId>jstl</groupId>
-		<artifactId>jstl</artifactId>
-		<version>1.2</version>
-	</dependency>
+
+
 <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
 <dependency>
     <groupId>org.hibernate.orm</groupId>

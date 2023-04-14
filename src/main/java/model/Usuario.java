@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,6 +36,13 @@ public class Usuario implements Serializable {
 	private String nombre;
 
 	private String pais;
+	
+	private int nota1;
+	
+	private int nota2;
+	
+	
+	private float promedio;
 
 	public Usuario(String email, String nombre, String pais) {
 		super();
@@ -42,9 +50,22 @@ public class Usuario implements Serializable {
 		this.nombre = nombre;
 		this.pais = pais;
 	}
-	
-	
 
+	public Usuario(String email, String nombre, String pais, int nota1, int nota2) {
+		super();
+		this.email = email;
+		this.nombre = nombre;
+		this.pais = pais;
+		this.nota1 = nota1;
+		this.nota2 = nota2;
+	}
+	
+	public float calcularProm() {
+		this.setPromedio(((float)(this.nota1 + this.nota2))/2);
+		return promedio;
+	}
+	
+//si la tabla tiene un @Transient ese atributo no es tenido en cuenta por la persistencia
 //si la tabla tiene otro nombre en la bd ponemos @Table y el nombre de la tabla de la bd
 //si alguna columna tiene otro nombre en la bd ponemos @Column y el nombre de la columna de la bd	
 }
