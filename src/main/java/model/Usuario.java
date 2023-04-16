@@ -58,6 +58,7 @@ public class Usuario implements Serializable {
 		this.pais = pais;
 		this.nota1 = nota1;
 		this.nota2 = nota2;
+		this.promedio = 0;
 	}
 	
 	public float calcularProm() {

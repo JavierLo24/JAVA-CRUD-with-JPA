@@ -39,6 +39,9 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 						<th>Nombre</th>
 						<th>Email</th>
 						<th>Pais</th>
+						<th>Nota 1</th>
+						<th>Nota 2</th>
+						<th>Promedio</th>
 						<th>Acciones</th>
 					<tr/>
 				</thead>
@@ -57,7 +60,16 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 							<td>
 								<c:out value="${usuario.pais}"/>
 							</td>
-							<td> <a href="<%=request.getContextPath()%>/edit?id=${usuario.id}">Editar</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="delete?id=<c:out value='${usuario.id}'/>">Borrar</a></td>
+							<td>
+								<c:out value="${usuario.nota1}"/>
+							</td>
+							<td>
+								<c:out value="${usuario.nota2}"/>
+							</td>
+							<td>
+								<c:out value="${usuario.promedio}"/>
+							</td>
+							<td> <a href="<%=request.getContextPath()%>/edit?id=${usuario.id}">Editar</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="delete?id=<c:out value='${usuario.id}'/>">Borrar</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="average?id=<c:out value='${usuario.id}'/>">Calcular Promedio</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

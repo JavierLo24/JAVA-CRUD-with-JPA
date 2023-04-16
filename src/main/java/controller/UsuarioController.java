@@ -56,6 +56,9 @@ public class UsuarioController extends HttpServlet {
 		case "/update":
 			actualizarUsuario(request, response);
 			break;
+		case "/average":
+			promedioNotas(request, response);
+			break;	
 		default:
 			listUsuario(request, response);
 			break;
@@ -95,9 +98,13 @@ public class UsuarioController extends HttpServlet {
 		String nombre = request.getParameter("nombre");
 		String email = request.getParameter("email");
 		String pais = request.getParameter("pais");
+		int nota1 = Integer.parseInt(request.getParameter("nota1"));
+		int nota2 = Integer.parseInt(request.getParameter("nota2"));
 		u.setNombre(nombre);
 		u.setEmail(email);
 		u.setPais(pais);
+		u.setNota1(nota1);
+		u.setNota2(nota2);
 		UsuarioDao uDao = new UsuarioDao();
 		uDao.insert(u);
 		response.sendRedirect("list");
@@ -118,11 +125,25 @@ public class UsuarioController extends HttpServlet {
 		String nombre = request.getParameter("nombre");
 		String email = request.getParameter("email");
 		String pais = request.getParameter("pais");
+		int nota1 = Integer.parseInt(request.getParameter("nota1"));
+		int nota2 = Integer.parseInt(request.getParameter("nota2"));
 		UsuarioDao uDao = new UsuarioDao();
 		Usuario u = uDao.find(id);
 		u.setNombre(nombre);
 		u.setEmail(email);
 		u.setPais(pais);
+		u.setNota1(nota1);
+		u.setNota2(nota2);
+		uDao.update(u);
+		request.getRequestDispatcher("/list").forward(request, response);
+	}
+	
+	private void promedioNotas(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, SQLException, IOException {
+		Integer id = Integer.parseInt(request.getParameter("id"));
+		UsuarioDao uDao = new UsuarioDao();
+		Usuario u = uDao.find(id);
+		u.calcularProm();
 		uDao.update(u);
 		request.getRequestDispatcher("/list").forward(request, response);
 	}

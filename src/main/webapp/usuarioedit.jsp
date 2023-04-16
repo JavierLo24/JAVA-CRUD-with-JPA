@@ -53,6 +53,12 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 				<fieldset class="form-group">
 					<label>País del Usuario</label> <input type="text" value="<c:out value='${usuario.pais}'/>" class="form-control" name="pais">
 				</fieldset>
+				<fieldset class="form-group">
+					<label>Nota 1 del Usuario</label> <input type="text" value="<c:out value='${usuario.nota1}'/>" class="form-control" name="nota1">
+				</fieldset>
+				<fieldset class="form-group">
+					<label>Nota 2 del Usuario</label> <input type="text" value="<c:out value='${usuario.nota2}'/>" class="form-control" name="nota2">
+				</fieldset>
 				<button type="submit" class="btn btn-success">Guardar</button>
 			</div>
 		</div>
